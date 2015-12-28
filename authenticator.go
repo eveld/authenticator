@@ -88,6 +88,8 @@ func authenticate(c *cli.Context) {
 	content, err := ioutil.ReadAll(resp.Body)
 	check(err)
 
+	fmt.Println(string(content))
+
 	// Parse the contents of the token.
 	var token Token
 	_ = json.Unmarshal(content, &token)
